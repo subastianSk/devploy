@@ -2,7 +2,7 @@ const express = require("express")
 const TODO_MODEL = require("./models").Todo
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.port || '8080';
 
 app.use(express.json())
 

@@ -1,1 +1,1 @@
-web:node app.js
+web:node config/config.json
