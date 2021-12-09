@@ -1,14 +1,18 @@
 //code sesi kak jose 3-12-21
 const express = require("express")
-const { User} = require("./models/index")
+const {
+    User
+} = require("./models/index")
 
 const app = express()
 const PORT = 3000
 
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({
+    extended: true
+}))
 
-app.post("/users", async (req, res)=>{
+app.post("/users", async (req, res) => {
     const body = req.body
     const userCandidate = {
         firstName: body['first_name'],
@@ -17,17 +21,25 @@ app.post("/users", async (req, res)=>{
         password: body['password']
     }
 
-    try{
+    try {
         // await User.create(userCandidate)
         // res.status(201).send(userCandidate)
-        const existingUser = await User.findOne({where: {email: userCandidate.email}})
-        if(existingUser !== null){
-            res.status(400).send({message: "email already taken"})
+        const existingUser = await User.findOne({
+            where: {
+                email: userCandidate.email
+            }
+        })
+        if (existingUser !== null) {
+            res.status(400).send({
+                message: "email already taken"
+            })
             return
         }
         await User.create(userCandidate)
-        res.status(201).send({status: "successfuly created"})
-    } catch(err){
+        res.status(201).send({
+            status: "successfuly created"
+        })
+    } catch (err) {
         res.status(500).send({
             message: err.message
         })
