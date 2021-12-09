@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "basic_mvc_development",
+    "username": "subastian@localhost",
+    "password": "Jack1928@",
+    "database": "developments",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
