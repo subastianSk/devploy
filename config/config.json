@@ -1,9 +1,10 @@
 {
   "development": {
-    "username": "subastian@localhost",
+    "username": "subastian",
     "password": "Jack1928@",
     "database": "developments",
-    "host": "127.0.0.1",
+    "host": "db4free.net",
+    "port": "3306",
     "dialect": "mysql"
   },
   "test": {
