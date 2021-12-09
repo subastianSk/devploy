@@ -2,7 +2,7 @@ const express = require("express")
 const TODO_MODEL = require("./models").Todo
 
 const app = express()
-const PORT = process.env.port || '8080';
+
 
 app.use(express.json())
 
@@ -122,6 +122,6 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log("server is listening on port", PORT)
-})
+app.listen(process.env.PORT || 3000, function () {
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
