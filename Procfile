@@ -1,1 +1,1 @@
-web gunicorn ToDoApps.wsgi
+web : node app.js
