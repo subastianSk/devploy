@@ -7,7 +7,7 @@ const PORT = process.env.port || '8080';
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('go to /my-project to see my project')
+  res.send(`<h1>Welcome to T-API!</h1><h4>The TodoList for all list</h4>`)
 });
 
 app.get("/todos", async (req, res) => {
