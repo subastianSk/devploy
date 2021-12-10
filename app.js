@@ -2,12 +2,12 @@ const express = require("express")
 const TODO_MODEL = require("./models").Todo
 
 const app = express()
-const PORT = process.env.port || '8080';
+const PORT = process.env.PORT || '8080';
 
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send(`<h1>Welcome to T-API!</h1><h4>The TodoList for all list</h4>`)
+  res.send(`<h1>Welcome to T-API!</h1><p>The TodoList for all list</p>`)
 });
 
 app.get("/todos", async (req, res) => {
