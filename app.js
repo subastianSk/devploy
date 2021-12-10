@@ -6,6 +6,10 @@ const PORT = process.env.port || '8080';
 
 app.use(express.json())
 
+app.get('/', (req, res) => {
+  res.send('go to /my-project to see my project')
+});
+
 app.get("/todos", async (req, res) => {
   try {
     const todos = await TODO_MODEL.findAll();
